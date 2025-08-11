@@ -7,23 +7,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const taskText = taskInput.value.trim();
 
         if (taskText === "") {
-            alert("Please enter a task");
+            alert("Please enter a task.");
             return;
         }
 
-        const li = document.createElement('li');
-        li.textContent = taskText;
+        const listItem = document.createElement('li');
+        listItem.textContent = taskText;
 
-        const removeBtn = document.createElement('button');
-        removeBtn.textContent = "Remove";
-        removeBtn.className = 'remove-btn';
+        const removeButton = document.createElement('button');
+        removeButton.textContent = "Remove";
+        removeButton.className = 'remove-btn';
 
-        removeBtn.onclick = function () {
-            taskList.removeChild(li);
+        removeButton.onclick = function () {
+            taskList.removeChild(listItem);
         };
 
-        li.appendChild(removeBtn);
-        taskList.appendChild(li);
+        listItem.appendChild(removeButton);
+
+        taskList.appendChild(listItem);
 
         taskInput.value = "";
     }
